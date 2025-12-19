@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "name": "E1",
+    "role": "Anti-AI Designer",
+    "mission": "Create a premium, dark-first productivity tool that feels like a 'Control Room' for life.",
+    "principles": [
+      "Fusion over Imitation: Mix Notion's structure with Linear's speed and Superhuman's minimalism.",
+      "Density is Luxury: High information density with perfect spacing > whitespace for the sake of whitespace.",
+      "Keyboard First: Every action must be accessible via command palette or shortcuts.",
+      "Instant Feedback: Optimistic UI updates; 0ms perceived latency."
+    ]
+  },
+  "typography": {
+    "primary_font": "Geist Sans",
+    "secondary_font": "JetBrains Mono",
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 600
+    },
+    "usage": {
+      "headings": "Geist Sans, tracking-tight, font-medium",
+      "body": "Geist Sans, tracking-normal, text-zinc-400",
+      "data_labels": "JetBrains Mono, uppercase, tracking-widest, text-xs",
+      "numbers": "JetBrains Mono, tabular-nums"
+    }
+  },
+  "colors": {
+    "palette_name": "Obsidian Protocol",
+    "theme": "dark",
+    "base": {
+      "background": "#09090B",
+      "foreground": "#FAFAFA",
+      "card": "#121212",
+      "card_foreground": "#FAFAFA",
+      "popover": "#09090B",
+      "popover_foreground": "#FAFAFA",
+      "primary": "#FAFAFA",
+      "primary_foreground": "#18181B",
+      "secondary": "#27272A",
+      "secondary_foreground": "#FAFAFA",
+      "muted": "#27272A",
+      "muted_foreground": "#A1A1AA",
+      "accent": "#27272A",
+      "accent_foreground": "#FAFAFA",
+      "destructive": "#7F1D1D",
+      "destructive_foreground": "#FAFAFA",
+      "border": "#27272A",
+      "input": "#27272A",
+      "ring": "#D4D4D8"
+    },
+    "accents": {
+      "brand": "#FAFAFA",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6"
+    },
+    "gradients": {
+      "subtle_glow": "radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)"
+    }
+  },
+  "layout": {
+    "grid_system": "Bento Grid (Control Room Mode)",
+    "spacing": {
+      "container_padding": "p-6 md:p-8 lg:p-12",
+      "item_gap": "gap-4",
+      "internal_padding": "p-4"
+    },
+    "border_radius": {
+      "default": "rounded-md",
+      "card": "rounded-lg",
+      "button": "rounded-md"
+    },
+    "strategies": [
+      "Use 'Control Room' density: tight gaps (gap-4), high information density.",
+      "Sidebar navigation: Fixed left, collapsible, glassmorphism effect.",
+      "Dashboard: Asymmetric grid. Hero metric (col-span-2) + List feeds (row-span-2)."
+    ]
+  },
+  "components": {
+    "buttons": {
+      "style": "Flat, high contrast, no shadow.",
+      "hover": "bg-zinc-800 text-white",
+      "active": "scale-95 transition-transform"
+    },
+    "cards": {
+      "style": "Border-only (1px solid zinc-800), transparent bg or extremely subtle zinc-900/50.",
+      "hover": "border-zinc-700 transition-colors"
+    },
+    "inputs": {
+      "style": "bg-transparent border-b border-zinc-800 focus:border-white transition-colors rounded-none px-0"
+    },
+    "modals": {
+      "style": "Backdrop blur-xl, border zinc-800, bg-black/80"
+    }
+  },
+  "motion": {
+    "library": "framer-motion",
+    "default_transition": {
+      "type": "spring",
+      "stiffness": 400,
+      "damping": 30
+    },
+    "page_transition": {
+      "initial": { "opacity": 0, "y": 10 },
+      "animate": { "opacity": 1, "y": 0 },
+      "exit": { "opacity": 0, "y": -10 }
+    },
+    "micro_interactions": "Hover states must be instant (duration: 0.1s). Active states must have tactile feedback (scale: 0.98)."
+  },
+  "visual_enhancers": {
+    "textures": "Subtle noise overlay (opacity 0.02) on background to kill digital flatness.",
+    "shadows": "None or extremely tight (shadow-sm). Rely on borders for separation.",
+    "glassmorphism": "Used sparingly on sticky headers and sidebar (backdrop-blur-md bg-black/70)."
+  },
+  "images": {
+    "habit_covers": [
+      {
+        "url": "https://images.pexels.com/photos/8058714/pexels-photo-8058714.jpeg",
+        "description": "Abstract Dark Geometric Texture",
+        "category": "habit_cover"
+      },
+      {
+        "url": "https://images.pexels.com/photos/3112019/pexels-photo-3112019.jpeg",
+        "description": "Minimalist Dark Architecture",
+        "category": "habit_cover"
+      },
+      {
+        "url": "https://images.pexels.com/photos/29884577/pexels-photo-29884577.jpeg",
+        "description": "Foggy Landscape Black and White",
+        "category": "habit_cover"
+      },
+      {
+        "url": "https://images.pexels.com/photos/13729072/pexels-photo-13729072.jpeg",
+        "description": "Minimalist Mountain Range",
+        "category": "habit_cover"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Implement the 'Obsidian Protocol' color palette immediately in tailwind.config.js.",
+    "Install 'geist' font package or use a similar clean sans-serif from Google Fonts (e.g., Inter tight tracking).",
+    "Create a 'Layout' component that handles the Sidebar and Main Content Area with framer-motion page transitions.",
+    "Build the 'HabitCard' component using the 'Control Room' grid style (border-only, minimal padding).",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Use the provided image URLs for habit cover placeholders.",
+    "Do NOT use gradients for backgrounds. Use solid rich blacks.",
+    "Do NOT use rounded-xl or rounded-2xl. Stick to rounded-md or rounded-lg for a sharper, professional look."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}
