@@ -1,34 +1,102 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* App-specific styles */
+
+.sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-md text-zinc-400 transition-colors duration-150;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+.sidebar-item:hover {
+    @apply bg-zinc-800/50 text-zinc-200;
+}
+
+.sidebar-item.active {
+    @apply bg-zinc-800 text-white;
+}
+
+.metric-card {
+    @apply border border-zinc-800 bg-zinc-900/50 rounded-lg p-4;
+}
+
+.metric-card:hover {
+    @apply border-zinc-700;
+}
+
+.task-card {
+    @apply border border-zinc-800 bg-zinc-900/30 rounded-md p-3 cursor-pointer;
+}
+
+.task-card:hover {
+    @apply border-zinc-700 bg-zinc-900/50;
+}
+
+.habit-card {
+    @apply border border-zinc-800 bg-zinc-900/30 rounded-lg p-4 cursor-pointer;
+}
+
+.habit-card:hover {
+    @apply border-zinc-700;
+}
+
+.kanban-column {
+    @apply bg-zinc-900/30 rounded-lg p-3 min-h-[200px];
+}
+
+.input-underline {
+    @apply bg-transparent border-0 border-b border-zinc-800 rounded-none px-0 focus:border-white focus:ring-0;
+}
+
+.btn-primary {
+    @apply bg-white text-zinc-900 hover:bg-zinc-200 font-medium;
+}
+
+.btn-secondary {
+    @apply bg-zinc-800 text-white hover:bg-zinc-700;
+}
+
+.btn-ghost {
+    @apply bg-transparent hover:bg-zinc-800 text-zinc-400 hover:text-white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
-.App-link {
-    color: #61dafb;
+.animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* Calendar customizations */
+.rdp {
+    --rdp-cell-size: 36px;
+    --rdp-accent-color: hsl(var(--primary));
+    --rdp-background-color: hsl(var(--accent));
+}
+
+.dark .rdp {
+    --rdp-accent-color: white;
+    --rdp-background-color: hsl(var(--secondary));
 }
