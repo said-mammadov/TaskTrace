@@ -9,6 +9,8 @@ import DashboardPage from './pages/DashboardPage';
 import TasksPage from './pages/TasksPage';
 import HabitsPage from './pages/HabitsPage';
 import HabitDetailPage from './pages/HabitDetailPage';
+import AnalyticsPage from './pages/AnalyticsPage';
+import CalendarPage from './pages/CalendarPage';
 import SettingsPage from './pages/SettingsPage';
 import './App.css';
 
@@ -18,7 +20,10 @@ function ProtectedRoute({ children }) {
     if (loading) {
         return (
             <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-                <div className="w-8 h-8 border-2 border-zinc-700 border-t-white rounded-full animate-spin" />
+                <div className="flex flex-col items-center gap-4">
+                    <div className="w-10 h-10 border-3 border-zinc-700 border-t-blue-500 rounded-full animate-spin" />
+                    <p className="text-zinc-500 text-sm">Loading...</p>
+                </div>
             </div>
         );
     }
@@ -36,7 +41,10 @@ function PublicRoute({ children }) {
     if (loading) {
         return (
             <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-                <div className="w-8 h-8 border-2 border-zinc-700 border-t-white rounded-full animate-spin" />
+                <div className="flex flex-col items-center gap-4">
+                    <div className="w-10 h-10 border-3 border-zinc-700 border-t-blue-500 rounded-full animate-spin" />
+                    <p className="text-zinc-500 text-sm">Loading...</p>
+                </div>
             </div>
         );
     }
@@ -71,6 +79,8 @@ function AppRoutes() {
                 <Route path="tasks" element={<TasksPage />} />
                 <Route path="habits" element={<HabitsPage />} />
                 <Route path="habits/:habitId" element={<HabitDetailPage />} />
+                <Route path="analytics" element={<AnalyticsPage />} />
+                <Route path="calendar" element={<CalendarPage />} />
                 <Route path="settings" element={<SettingsPage />} />
             </Route>
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
@@ -85,7 +95,7 @@ function App() {
                 <BrowserRouter>
                     <div className="noise-overlay" />
                     <AppRoutes />
-                    <Toaster position="bottom-right" />
+                    <Toaster position="bottom-right" richColors />
                 </BrowserRouter>
             </AuthProvider>
         </ThemeProvider>
