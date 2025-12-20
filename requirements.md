@@ -1,56 +1,65 @@
-# TaskTracker - Notion-Style Task Manager with Habit Tracking
+# TaskTracker - Kali Linux Local Setup
 
-## Original Problem Statement
-Build a Notion-style task manager where users can add, edit, complete, and delete tasks. Include categories or priorities, due dates, and a dashboard showing tasks by status. The platform must be highly interactive with habit/skill drill-down dashboards showing analytics, session timelines, trend analysis, and streak tracking.
+## Problem Statement
+Build a Notion-style task manager with habit tracking, radar charts, enhanced animations, and full sidebar functionality.
 
-## User Requirements
-- JWT-based authentication (single-user, self-admin)
-- MongoDB data persistence
-- Dark/Light theme toggle (dark primary)
-- Task categories/tags & priorities (Critical/High/Medium/Low)
-- Time tracking for habits with sessions and streaks
-- Analytics & charts
-- Kanban, Table, Calendar views
-- Premium dark-first design (Notion/Linear/Superhuman inspired)
+## Completed Features
 
-## Architecture Completed
+### Dashboard Enhancements
+- **Radar Chart** for habits visualization (Progress vs Streak)
+- **Priority Breakdown** with animated progress bars
+- **Task Status Pie Chart** 
+- Rich metrics with trends (+12%, +25%, Record!)
+- Weekly activity bar chart with dual data series
 
-### Backend (FastAPI)
-- `/api/auth/register`, `/api/auth/login`, `/api/auth/me` - JWT authentication
-- `/api/tasks` - Full CRUD with categories, priorities, due dates, status
-- `/api/habits` - Full CRUD with color, icon, target minutes
-- `/api/sessions` - Session logging for habits
-- `/api/active-sessions` - Real-time timer start/stop
-- `/api/analytics/overview` - Dashboard metrics
-- `/api/analytics/habits/{id}` - Habit-specific analytics with timeline
-- `/api/analytics/weekly-activity` - Weekly activity chart data
+### Sidebar (Fully Populated)
+- Quick Stats (Streak, Focus time, Weekly progress)
+- Full Navigation (Dashboard, Tasks, Habits, Analytics, Calendar, Settings)
+- **Quick Access** habits list with streak indicators
+- Dark Mode toggle
+- Active session timer widget
+- User profile section
+- Keyboard shortcuts (1-5 for navigation)
 
-### Frontend (React + Tailwind)
-- **LoginPage / RegisterPage** - Clean auth with branding
-- **Layout** - Collapsible sidebar with active timer widget
-- **DashboardPage** - Metrics grid, weekly activity charts, recent tasks/habits
-- **TasksPage** - Kanban, List, Calendar views with full CRUD
-- **HabitsPage** - Habit cards with start session, progress bars, streaks
-- **HabitDetailPage** - Deep drill-down with analytics charts, session history
-- **SettingsPage** - Theme toggle (dark/light), profile info
+### New Pages
+- **Analytics Page** - Activity trends, habits performance radar, productivity score
+- **Calendar Page** - Monthly view with task indicators
 
-### Design System
-- Obsidian Protocol color palette (rich blacks #09090B, #121212)
-- Inter + JetBrains Mono typography
-- Border-only cards, no gradients
-- Framer Motion page transitions
-- Recharts for analytics
+### Enhanced Animations
+- Framer Motion page transitions (scale + fade)
+- Hover effects on all interactive elements
+- Staggered animations on lists
+- Pulsing indicators for active items
+- Spring physics on sidebar toggle
+- Gradient buttons with hover states
 
-## Test Results
-- Backend: 100% (22/22 API endpoints passing)
-- Frontend: 95% (all major functionality working)
+### Keyboard Shortcuts
+- `⌘K` - Command palette
+- `1-5` - Quick navigation
+- `Escape` - Close modals
 
-## Next Action Items
-1. Add keyboard shortcuts (Cmd+K command palette)
-2. Implement drag-and-drop for Kanban tasks
-3. Add recurring habits/tasks support
-4. Export data to CSV/JSON functionality
-5. Browser notifications for reminders
+## Kali Linux Setup
 
-## Potential Enhancement
-Consider adding a **Weekly Review** feature that generates an AI-powered summary of your productivity patterns, suggesting optimal focus times and habit adjustments based on your tracked data. This could increase engagement and provide actionable insights.
+```bash
+# Run the setup script
+chmod +x setup-kali.sh
+./setup-kali.sh
+
+# Management commands
+./start.sh    # Start all services
+./stop.sh     # Stop all services
+./restart.sh  # Restart services
+./status.sh   # Check status
+./logs.sh     # View logs
+```
+
+## URLs (Local)
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8001
+- API Docs: http://localhost:8001/docs
+
+## Next Steps
+- Add drag-and-drop for Kanban
+- Implement Pomodoro timer
+- Add data export (JSON/CSV)
+- Push notifications for streaks
