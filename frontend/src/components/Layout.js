@@ -21,7 +21,8 @@ import {
     Clock,
     Flame,
     TrendingUp,
-    Command
+    Command,
+    Shield
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
@@ -39,6 +40,7 @@ const navItems = [
     { path: '/analytics', icon: BarChart3, label: 'Analytics', shortcut: '4' },
     { path: '/calendar', icon: Calendar, label: 'Calendar', shortcut: '5' },
     { path: '/settings', icon: Settings, label: 'Settings', shortcut: '0' },
+    { path: '/admin', icon: Shield, label: 'Admin', shortcut: '9', adminOnly: true },
 ];
 
 const quickActions = [
@@ -246,7 +248,7 @@ export default function Layout() {
                             </motion.p>
                         )}
                     </AnimatePresence>
-                    {navItems.map((item, index) => (
+                    {navItems.filter(item => !item.adminOnly || user?.role === 'admin').map((item, index) => (
                         <motion.div
                             key={item.path}
                             initial={{ opacity: 0, x: -20 }}
