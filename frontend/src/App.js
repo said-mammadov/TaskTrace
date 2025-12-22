@@ -12,6 +12,7 @@ import HabitDetailPage from './pages/HabitDetailPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import CalendarPage from './pages/CalendarPage';
 import SettingsPage from './pages/SettingsPage';
+import AdminPage from './pages/AdminPage';
 import './App.css';
 
 function ProtectedRoute({ children }) {
@@ -82,6 +83,7 @@ function AppRoutes() {
                 <Route path="analytics" element={<AnalyticsPage />} />
                 <Route path="calendar" element={<CalendarPage />} />
                 <Route path="settings" element={<SettingsPage />} />
+                <Route path="admin" element={<AdminPage />} />
             </Route>
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
