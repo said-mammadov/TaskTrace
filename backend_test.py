@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import uuid
 
 class TaskTrackerAPITester:
-    def __init__(self, base_url="https://tasktracker-357.preview.emergentagent.com"):
+    def __init__(self, base_url="https://fixtrack-21.preview.emergentagent.com"):
         self.base_url = base_url
         self.token = None
         self.user_id = None
