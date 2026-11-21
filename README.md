@@ -1,6 +1,6 @@
 TaskTracker is a task, habit, and time-tracking application. Users authenticate, enter a protected workspace, and manage tasks and habits; the frontend also exposes calendar, analytics, settings, and administration views. Feature pages use an API hook to call the backend, while authentication calls it directly. Backend internals and several page-to-server connections were not excerpted, so only clearly evidenced links are shown; unsampled administrative and analytics wiring is left unverified.
 
-mermaid```
+```mermaid
 flowchart TD
 
 subgraph group_frontend["Frontend experience"]
